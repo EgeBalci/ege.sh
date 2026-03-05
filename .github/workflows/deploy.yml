@@ -25,17 +25,17 @@ jobs:
           bun-version: latest
 
       - name: Install dependencies
-        working-directory: ./site
+        working-directory: ./
         run: bun install --frozen-lockfile
 
       - name: Build static site
-        working-directory: ./site
+        working-directory: ./
         run: bun run build:prod
 
       - name: Upload Pages artifact
         uses: actions/upload-pages-artifact@v3
         with:
-          path: site/dist
+          path: ./dist
 
   deploy:
     needs: build

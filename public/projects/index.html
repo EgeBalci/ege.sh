@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="/css/projects.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" crossorigin="anonymous" referrerpolicy="no-referrer" />
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          fontFamily: {
+            mono: ['"Lucida Console"', 'monospace'],
+          },
+          animation: {
+            'fade-in': 'fadeIn 0.5s ease-out forwards',
+            'fade-in-up': 'fadeInUp 0.65s ease-out forwards',
+          },
+          keyframes: {
+            fadeIn: {
+              '0%': { opacity: '0', transform: 'translateY(8px)' },
+              '100%': { opacity: '1', transform: 'translateY(0)' },
+            },
+            fadeInUp: {
+              '0%': { opacity: '0', transform: 'translateY(24px)' },
+              '100%': { opacity: '1', transform: 'translateY(0)' },
+            },
+          },
+        },
+      },
+    }
+  </script>
+  <title>Projects — ege.sh</title>
+</head>
+
+<body class="bg-[#121211] text-[#f9f9f7] font-mono antialiased min-h-screen">
+  <div id="app" class="max-w-5xl mx-auto px-5 py-8">
+
+    <!-- Navigation -->
+    <nav class="text-center mb-12 text-sm tracking-wide">
+      <a href="/" class="text-[#bdbdbd] hover:text-[#f9f9f7] transition-colors">Home</a>
+      <span class="text-[#555]"> / </span>
+      <a href="https://blog.ege.sh" target="_blank" class="text-[#bdbdbd] hover:text-[#f9f9f7] transition-colors">Blog</a>
+      <span class="text-[#555]"> / </span>
+      <span class="text-[#f9f9f7]">Projects</span>
+      <span class="text-[#555]"> / </span>
+      <a href="/talks/" class="text-[#bdbdbd] hover:text-[#f9f9f7] transition-colors">Talks</a>
+      <span class="text-[#555]"> / </span>
+      <a href="/friends/" class="text-[#bdbdbd] hover:text-[#f9f9f7] transition-colors">Friends</a>
+    </nav>
+
+    <!-- ========== STATS SECTION ========== -->
+    <section id="stats-section" class="mb-14">
+      <!-- Skeleton -->
+      <div id="stats-skeleton" class="flex flex-col md:flex-row gap-4 items-stretch">
+        <div class="min-w-[9rem] h-28 bg-[#1e1e1d] rounded-lg animate-pulse"></div>
+        <div class="min-w-[9rem] h-28 bg-[#1e1e1d] rounded-lg animate-pulse"></div>
+        <div class="flex-1 h-28 bg-[#1e1e1d] rounded-lg animate-pulse"></div>
+      </div>
+      <!-- Real content (hidden until loaded) -->
+      <div id="stats-content" class="hidden"></div>
+    </section>
+
+    <!-- ========== HIGHLIGHTED PROJECTS ========== -->
+    <section id="highlighted-section" class="mb-14">
+      <h2 class="text-xs text-[#666] uppercase tracking-widest mb-5">Highlighted Projects</h2>
+      <!-- Skeleton -->
+      <div id="highlighted-skeleton" class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
+        <div class="h-44 bg-[#1e1e1d] rounded-lg animate-pulse"></div>
+        <div class="h-44 bg-[#1e1e1d] rounded-lg animate-pulse"></div>
+        <div class="h-44 bg-[#1e1e1d] rounded-lg animate-pulse"></div>
+        <div class="h-44 bg-[#1e1e1d] rounded-lg animate-pulse"></div>
+        <div class="h-44 bg-[#1e1e1d] rounded-lg animate-pulse"></div>
+        <div class="h-44 bg-[#1e1e1d] rounded-lg animate-pulse"></div>
+      </div>
+      <!-- Real content -->
+      <div id="highlighted-content" class="hidden"></div>
+    </section>
+
+    <!-- ========== CAROUSEL SECTION ========== -->
+    <section id="carousel-section" class="mb-10">
+      <h2 class="text-xs text-[#666] uppercase tracking-widest mb-5">All Projects</h2>
+      <!-- Skeleton -->
+      <div id="carousel-skeleton" class="flex flex-col gap-3">
+        <div class="h-20 bg-[#1e1e1d] rounded-lg animate-pulse"></div>
+        <div class="h-20 bg-[#1e1e1d] rounded-lg animate-pulse"></div>
+        <div class="h-20 bg-[#1e1e1d] rounded-lg animate-pulse"></div>
+      </div>
+      <!-- Real content -->
+      <div id="carousel-content" class="hidden"></div>
+    </section>
+
+  </div>
+
+  <footer class="text-center py-6">
+    <small class="text-[#555]">☣</small>
+  </footer>
+
+  <script type="module" src="/js/projects.js"></script>
+</body>
+</html>

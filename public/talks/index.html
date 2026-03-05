@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="/css/talks.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" crossorigin="anonymous" referrerpolicy="no-referrer" />
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          fontFamily: {
+            mono: ['"Lucida Console"', 'monospace'],
+          },
+          animation: {
+            'fade-in': 'fadeIn 0.5s ease-out forwards',
+            'fade-in-up': 'fadeInUp 0.6s ease-out forwards',
+          },
+          keyframes: {
+            fadeIn: {
+              '0%': { opacity: '0', transform: 'translateY(8px)' },
+              '100%': { opacity: '1', transform: 'translateY(0)' },
+            },
+            fadeInUp: {
+              '0%': { opacity: '0', transform: 'translateY(20px)' },
+              '100%': { opacity: '1', transform: 'translateY(0)' },
+            },
+          },
+        },
+      },
+    }
+  </script>
+  <title>Talks — ege.sh</title>
+</head>
+
+<body class="bg-[#121211] text-[#f9f9f7] font-mono antialiased min-h-screen">
+  <div id="app" class="max-w-5xl mx-auto px-5 py-8">
+
+    <!-- Navigation -->
+    <nav class="text-center mb-10 text-sm tracking-wide">
+      <a href="/" class="text-[#bdbdbd] hover:text-[#f9f9f7] transition-colors">Home</a>
+      <span class="text-[#555]"> / </span>
+      <a href="https://blog.ege.sh" target="_blank" class="text-[#bdbdbd] hover:text-[#f9f9f7] transition-colors">Blog</a>
+      <span class="text-[#555]"> / </span>
+      <a href="/projects/" class="text-[#bdbdbd] hover:text-[#f9f9f7] transition-colors">Projects</a>
+      <span class="text-[#555]"> / </span>
+      <span class="text-[#f9f9f7]">Talks</span>
+      <span class="text-[#555]"> / </span>
+      <a href="/friends/" class="text-[#bdbdbd] hover:text-[#f9f9f7] transition-colors">Friends</a>
+    </nav>
+
+    <!-- Category filter bar -->
+    <div id="filter-bar" class="mb-8">
+      <!-- Skeleton -->
+      <div id="filter-skeleton" class="flex flex-wrap gap-2">
+        <div class="w-14 h-7 bg-[#1e1e1d] rounded-full animate-pulse"></div>
+        <div class="w-20 h-7 bg-[#1e1e1d] rounded-full animate-pulse"></div>
+        <div class="w-16 h-7 bg-[#1e1e1d] rounded-full animate-pulse"></div>
+        <div class="w-24 h-7 bg-[#1e1e1d] rounded-full animate-pulse"></div>
+        <div class="w-14 h-7 bg-[#1e1e1d] rounded-full animate-pulse"></div>
+        <div class="w-18 h-7 bg-[#1e1e1d] rounded-full animate-pulse"></div>
+      </div>
+      <!-- Real content -->
+      <div id="filter-content" class="hidden"></div>
+    </div>
+
+    <!-- Talk cards -->
+    <section id="talks-section">
+      <!-- Skeleton -->
+      <div id="talks-skeleton" class="flex flex-wrap gap-5">
+        <div class="w-full sm:w-[calc(50%-0.625rem)] lg:w-[calc(33.333%-0.833rem)] h-64 bg-[#1e1e1d] rounded-lg animate-pulse"></div>
+        <div class="w-full sm:w-[calc(50%-0.625rem)] lg:w-[calc(33.333%-0.833rem)] h-64 bg-[#1e1e1d] rounded-lg animate-pulse"></div>
+        <div class="w-full sm:w-[calc(50%-0.625rem)] lg:w-[calc(33.333%-0.833rem)] h-64 bg-[#1e1e1d] rounded-lg animate-pulse"></div>
+        <div class="w-full sm:w-[calc(50%-0.625rem)] lg:w-[calc(33.333%-0.833rem)] h-64 bg-[#1e1e1d] rounded-lg animate-pulse"></div>
+        <div class="w-full sm:w-[calc(50%-0.625rem)] lg:w-[calc(33.333%-0.833rem)] h-64 bg-[#1e1e1d] rounded-lg animate-pulse"></div>
+        <div class="w-full sm:w-[calc(50%-0.625rem)] lg:w-[calc(33.333%-0.833rem)] h-64 bg-[#1e1e1d] rounded-lg animate-pulse"></div>
+      </div>
+      <!-- Real content -->
+      <div id="talks-content" class="hidden"></div>
+    </section>
+
+  </div>
+
+  <footer class="text-center py-6">
+    <small class="text-[#555]">☣</small>
+  </footer>
+
+  <script type="module" src="/js/talks.js"></script>
+</body>
+</html>

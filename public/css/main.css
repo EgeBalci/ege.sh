@@ -1,0 +1,458 @@
+/* ===========================
+   CSS Variables & Reset
+   =========================== */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-style: normal;
+}
+
+html {
+  --color-bg: #121211;
+  --color-text: #f9f9f7;
+  --color-muted: #bdbdbd;
+  --u-thickness: 1.1px;
+  --u-spacing: 0.4rem;
+  --u-offset: 0.2rem;
+
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  text-rendering: optimizeLegibility;
+}
+
+body {
+  background: var(--color-bg);
+  font-family: "Lucida Console", monospace;
+  font-size: 14px;
+  line-height: 1.45;
+  letter-spacing: 0.01em;
+  height: 100dvh;
+  overflow: hidden;
+}
+
+body,
+a {
+  color: var(--color-text);
+}
+
+::selection {
+  background: var(--color-text);
+  color: var(--color-bg);
+}
+
+/* ===========================
+   Layout
+   =========================== */
+main {
+  height: 100dvh;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  overflow: hidden;
+}
+
+.ct {
+  margin: 0 auto;
+  padding: 0.6em 1.6em;
+  max-width: 52ch;
+  width: 100%;
+  position: relative;
+  z-index: 1;
+  flex: 1;
+  overflow-y: auto;
+  overflow-x: hidden;
+  scrollbar-width: none;
+}
+
+.ct::-webkit-scrollbar {
+  display: none;
+}
+
+.ct > * {
+  margin: 1rem 0 0;
+}
+
+/* ===========================
+   Links
+   =========================== */
+a {
+  color: var(--color-text);
+  text-decoration: none;
+  position: relative;
+  z-index: 1;
+}
+
+a::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  padding: 1em;
+  z-index: -1;
+}
+
+a:focus,
+a:hover {
+  text-decoration: none;
+}
+
+/* ===========================
+   Header link dashed underline
+   =========================== */
+.h a::after {
+  content: "";
+  position: absolute;
+  bottom: calc(-1.1 * var(--u-offset));
+  left: 0;
+  right: 0;
+  height: var(--u-thickness);
+  background: repeating-linear-gradient(
+    to right,
+    var(--color-muted) 0,
+    var(--color-muted) 2px,
+    transparent 2px,
+    transparent var(--u-spacing)
+  );
+  transition: background 0.3s ease-out;
+  opacity: 0.75;
+}
+
+.h a:hover::after {
+  background: var(--color-muted);
+  height: calc(var(--u-thickness) * 0.5);
+}
+
+/* ===========================
+   Navigation links
+   =========================== */
+.nav-links {
+  margin-top: 0.5rem;
+  text-align: center;
+  transform: translateX(-1.0rem);
+}
+
+.nav-links a::after {
+  content: "";
+  position: absolute;
+  bottom: calc(-1.1 * var(--u-offset));
+  left: 0;
+  right: 0;
+  height: var(--u-thickness);
+  background: repeating-linear-gradient(
+    to right,
+    var(--color-muted) 0,
+    var(--color-muted) 2px,
+    transparent 2px,
+    transparent var(--u-spacing)
+  );
+  transition: background 0.3s ease-out;
+  opacity: 0.75;
+}
+
+.nav-links a:hover::after {
+  background: var(--color-muted);
+  height: calc(var(--u-thickness) * 0.5);
+}
+
+/* ===========================
+   Social links
+   =========================== */
+.about-social-links {
+  list-style: none;
+  padding: 0;
+  margin: 1.2em 0;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.6rem;
+  justify-content: center;
+  transform: translateX(-1.0rem);
+}
+
+.about-social-links li {
+  margin: 0;
+}
+
+.about-social-links a {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.3rem;
+  padding: 0.3em;
+  color: var(--color-muted);
+  transition: color 0.2s ease;
+}
+
+.about-social-links a::before,
+.about-social-links a::after {
+  display: none;
+}
+
+.about-social-links a:hover {
+  color: var(--color-text);
+}
+
+/* ===========================
+   Header / Footer
+   =========================== */
+header {
+  margin-bottom: 1.5em;
+}
+
+footer {
+  padding: 1em 0;
+}
+
+sup,
+small {
+  color: var(--color-muted);
+  font-size: 0.8em;
+}
+
+sup {
+  font-size: 0.7em;
+}
+
+small {
+  display: block;
+  margin-top: 1.5em;
+  text-align: center;
+}
+
+/* ===========================
+   Lists & Article links
+   =========================== */
+ul {
+  list-style: none;
+  padding: 0;
+  margin: 0 0 2em 0;
+}
+
+li {
+  margin: 0.6rem 0;
+  position: relative;
+}
+
+.pt li {
+  padding: 0 0 0 0.6em;
+}
+
+.pt li::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 68%;
+  width: 0.6em;
+  height: 1px;
+  background: var(--color-text);
+  transform: scaleX(1);
+  transform-origin: right;
+  transition: transform 1s ease;
+}
+
+.pt li:hover::before {
+  transform: scaleX(2);
+  transition-duration: 0.3s;
+}
+
+.pt li a {
+  display: inline-block;
+  margin-left: 0.6em;
+  white-space: nowrap;
+}
+
+/* ===========================
+   ASCII animation classes
+   =========================== */
+a.as {
+  cursor: pointer;
+  user-select: none;
+}
+
+a.as::selection {
+  background: transparent;
+}
+
+a.as:hover {
+  position: relative;
+  cursor: pointer;
+}
+
+/* ===========================
+   sr-only
+   =========================== */
+.so {
+  position: absolute;
+  display: block;
+  width: 1px;
+  height: 1px;
+  margin: -1px;
+  border: 0;
+  padding: 0;
+  white-space: nowrap;
+  overflow: hidden;
+}
+
+/* ===========================
+   WebGL Canvas
+   =========================== */
+#gl {
+  display: block;
+  width: 100%;
+  max-width: 26rem;
+  margin: 0 auto;
+  aspect-ratio: 500 / 300;
+  background: none;
+  border: none;
+  position: relative;
+  z-index: -1;
+  cursor: pointer;
+}
+
+#gl:active {
+  cursor: pointer;
+}
+
+/* ===========================
+   Bat fallback (loaded dynamically)
+   =========================== */
+.bat-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  max-width: 26rem;
+  margin: 0 auto;
+  aspect-ratio: 500 / 300;
+  overflow: hidden;
+  position: relative;
+  z-index: -1;
+}
+
+/* ===========================
+   Responsive Layout
+   =========================== */
+
+/* Small phones */
+@media (max-width: 480px) {
+  body {
+    font-size: 12px;
+  }
+  .ct {
+    padding: 0.4em 1em;
+    max-width: 100%;
+  }
+  #gl,
+  .bat-container {
+    max-width: 100%;
+    aspect-ratio: 5 / 3;
+  }
+  .about-social-links {
+    gap: 0.3rem;
+  }
+  .about-social-links a {
+    font-size: 1.1rem;
+  }
+  .pt li a {
+    white-space: normal;
+    word-break: break-word;
+  }
+}
+
+/* Tablets */
+@media (min-width: 481px) and (max-width: 768px) {
+  body {
+    font-size: 13px;
+  }
+  .ct {
+    padding: 0.5em 1.4em;
+    max-width: 48ch;
+  }
+  #gl,
+  .bat-container {
+    max-width: 22rem;
+  }
+}
+
+/* Desktop */
+@media (min-width: 769px) and (max-width: 1200px) {
+  .ct {
+    max-width: 56ch;
+  }
+  #gl,
+  .bat-container {
+    max-width: 28rem;
+  }
+}
+
+/* Large screens */
+@media (min-width: 1201px) {
+  body {
+    font-size: 15px;
+  }
+  .ct {
+    max-width: 62ch;
+    padding: 0.8em 2em;
+  }
+  #gl,
+  .bat-container {
+    max-width: 32rem;
+  }
+}
+
+/* Dynamic height adjustments */
+@media (max-height: 600px) {
+  .ct > * {
+    margin: 0.3rem 0 0;
+  }
+  br {
+    display: none;
+  }
+  #gl,
+  .bat-container {
+    aspect-ratio: 5 / 2;
+  }
+  .about-social-links {
+    margin: 0.4em 0;
+  }
+}
+
+@media (max-height: 480px) {
+  #gl,
+  .bat-container {
+    display: none;
+  }
+  .ct > * {
+    margin: 0.2rem 0 0;
+  }
+}
+
+@media (min-height: 900px) {
+  .ct > * {
+    margin: 1.5rem 0 0;
+  }
+}
+
+/* ===========================
+   Fade-in animation
+   =========================== */
+@keyframes fadeInArticle {
+  0% {
+    opacity: 0;
+    transform: translateY(6px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.article-fade-in {
+  animation: fadeInArticle 0.5s ease-out forwards;
+  opacity: 0;
+}
+
+.article-skeleton {
+  color: var(--color-muted);
+  opacity: 0.35;
+  pointer-events: none;
+}

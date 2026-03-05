@@ -1,0 +1,65 @@
+[
+  {
+    "conference": "Insomni'hack",
+    "title": "Evasion by De-Optimization",
+    "link": "https://youtu.be/Issvbst_89I?si=st3fL4UorPjSMMgW",
+    "date": "22-04-2024",
+    "tags": ["malware", "obfuscation", "evasion", "english"]
+  },
+  {
+    "conference": "EPFL Tech4Trust Conference",
+    "title": "Evolving Malware Industry",
+    "link": "https://youtu.be/Pg1klKtEvOo?si=mww43Atn4HZ2Ex9T",
+    "date": "22-04-2023",
+    "tags": ["malware", "cti", "cybercrime", "english"]
+  },
+  {
+    "conference": "HackInParis",
+    "title": "Weaponizing Rsync 0Day Vulnerability",
+    "link": "https://youtu.be/GW3wIITLbS4?si=iB0AnIimM0id8hsC",
+    "date": "30-07-2022",
+    "tags": ["0day", "exploit", "vulnerability", "english"]
+  },
+  {
+    "conference": "CONFidence",
+    "title": "Inside CONTI Ransomware Group",
+    "link": "https://youtu.be/A8VqachI5b4?si=NxO1x1ZMkRbMIsqj",
+    "date": "06-06-2022",
+    "tags": ["ransomware", "cybercrime", "cti", "english"]
+  },
+  {
+    "conference": "BotConf",
+    "title": "Behind the Scenes of the QBot",
+    "link": "https://www.botconf.eu/botconf-author-listing/entry/8326/",
+    "date": "27-04-2022",
+    "tags": ["malware", "cybercrime", "cti", "english"]
+  },
+  {
+    "conference": "HackerConf",
+    "title": "PTI Stories 0x02: VoIP Dialer",
+    "link": "https://youtu.be/VbsGExDsrO0?si=Aa4i1EmEHWM8hEee",
+    "date": "22-03-2022",
+    "tags": ["cybercrime", "cti", "turkish"]
+  },
+  {
+    "conference": "HackerConf",
+    "title": "PTI Stories 0x01: Alien Stealer",
+    "link": "https://youtu.be/Co4dHzXOAwY?si=itHFLVsxjTkn0ZZ_",
+    "date": "13-02-2021",
+    "tags": ["malware", "cybercrime", "cti", "turkish"]
+  },
+  {
+    "conference": "TTMO #4",
+    "title": "The First winsock-accept Backdoor",
+    "link": "https://youtu.be/bqRzZoHjS8A?si=ZrlPOA13unM2WHNV",
+    "date": "14-02-2021",
+    "tags": ["malware", "turkish"]
+  },
+  {
+    "conference": "TTMO #3",
+    "title": "New Generation Polymorphic Encoder",
+    "link": "https://youtu.be/yhfWwddxs74?si=_FyrnSrWKIyMWs4l",
+    "date": "07-06-2020",
+    "tags": ["malware", "obfuscation", "evasion", "turkish"]
+  }
+]

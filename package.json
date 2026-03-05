@@ -1,0 +1,22 @@
+{
+  "name": "site",
+  "type": "module",
+  "private": true,
+  "scripts": {
+    "clean": "rm -rf dist",
+    "build": "bun run build.ts",
+    "build:prod": "bun run build.ts --minify",
+    "build:css": "npx sass src/bat.scss public/css/bat.css --no-source-map",
+    "preview": "cd dist && python3 -m http.server 3000"
+  },
+  "devDependencies": {
+    "@types/bun": "latest",
+    "sass": "^1.97.3"
+  },
+  "peerDependencies": {
+    "typescript": "^5"
+  },
+  "dependencies": {
+    "site": "."
+  }
+}

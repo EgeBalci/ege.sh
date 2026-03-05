@@ -1,0 +1,117 @@
+/* ===========================
+   Projects page styles
+   =========================== */
+
+/* ---- Base reset ---- */
+*,
+*::before,
+*::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+::selection {
+  background: #f9f9f7;
+  color: #121211;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+/* ---- Carousel ---- */
+
+.carousel-wrapper {
+  overflow: hidden;
+  mask-image: linear-gradient(
+    to right,
+    transparent,
+    black 6%,
+    black 94%,
+    transparent
+  );
+  -webkit-mask-image: linear-gradient(
+    to right,
+    transparent,
+    black 6%,
+    black 94%,
+    transparent
+  );
+}
+
+.carousel-track {
+  width: max-content;
+  will-change: transform;
+}
+
+.carousel-track.scroll-left {
+  animation: scrollLeft var(--duration, 40s) linear infinite;
+}
+
+.carousel-track.scroll-right {
+  animation: scrollRight var(--duration, 35s) linear infinite;
+}
+
+@keyframes scrollLeft {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(-50%);
+  }
+}
+
+@keyframes scrollRight {
+  0% {
+    transform: translateX(-50%);
+  }
+  100% {
+    transform: translateX(0);
+  }
+}
+
+/* Pause carousel on hover */
+.carousel-wrapper:hover .carousel-track {
+  animation-play-state: paused;
+}
+
+/* ---- Line clamp (for project descriptions) ---- */
+
+.line-clamp-2 {
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+
+/* ---- Scrollbar ---- */
+
+body {
+  scrollbar-width: thin;
+  scrollbar-color: #2a2a29 transparent;
+}
+
+body::-webkit-scrollbar {
+  width: 4px;
+}
+
+body::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+body::-webkit-scrollbar-thumb {
+  background: #2a2a29;
+  border-radius: 4px;
+}
+
+body::-webkit-scrollbar-thumb:hover {
+  background: #444;
+}
+
+/* ---- Smooth rendering ---- */
+
+canvas {
+  image-rendering: auto;
+}

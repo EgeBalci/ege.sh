@@ -1,0 +1,42 @@
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Posts on Captain&#39;s Logs</title>
+    <link>https://blog.ege.sh/posts/</link>
+    <description>Recent content in Posts on Captain&#39;s Logs</description>
+    <generator>Hugo</generator>
+    <language>en-us</language>
+    <copyright>Ege Balcı</copyright>
+    <lastBuildDate>Mon, 16 Jun 2025 11:25:13 +0200</lastBuildDate>
+    <atom:link href="https://blog.ege.sh/posts/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>How I Track You For Free</title>
+      <link>https://blog.ege.sh/posts/how-i-track-you-for-free/</link>
+      <pubDate>Mon, 16 Jun 2025 11:25:13 +0200</pubDate>
+      <guid>https://blog.ege.sh/posts/how-i-track-you-for-free/</guid>
+    </item>
+    <item>
+      <title>Evasion by De-optimization</title>
+      <link>https://blog.ege.sh/posts/evasion-by-de-optimization/</link>
+      <pubDate>Tue, 20 Aug 2024 14:20:34 +0200</pubDate>
+      <guid>https://blog.ege.sh/posts/evasion-by-de-optimization/</guid>
+    </item>
+    <item>
+      <title>Weaponizing Rsync 0Day Vulnerability</title>
+      <link>https://blog.ege.sh/posts/weaponizing-rsync-0day-vulnerability/</link>
+      <pubDate>Thu, 30 Jun 2022 14:20:34 +0200</pubDate>
+      <guid>https://blog.ege.sh/posts/weaponizing-rsync-0day-vulnerability/</guid>
+    </item>
+    <item>
+      <title>The First Winsock Accept Backdoor</title>
+      <link>https://blog.ege.sh/posts/winsock-accept-backdoor/</link>
+      <pubDate>Sun, 14 Feb 2021 14:20:34 +0200</pubDate>
+      <guid>https://blog.ege.sh/posts/winsock-accept-backdoor/</guid>
+    </item>
+    <item>
+      <title>SGN New Generation Polymorphic Encoders</title>
+      <link>https://blog.ege.sh/posts/sgn-new-generation-polymorphic-encoders/</link>
+      <pubDate>Sun, 07 Jun 2020 14:19:33 +0200</pubDate>
+      <guid>https://blog.ege.sh/posts/sgn-new-generation-polymorphic-encoders/</guid>
+    </item>
+  </channel>
+</rss>

@@ -72,21 +72,33 @@ const HIGHLIGHTED_COUNT = 6;
 
 // ========== GitHub API ==========
 
-async function fetchAllRepos(): Promise<GitHubRepo[]> {
+async function fetchAllRepos(
+  onProgress?: (loaded: number, total: number) => void,
+): Promise<GitHubRepo[]> {
   const allRepos: GitHubRepo[] = [];
   let page = 1;
+
+  // Resolve total page count from first response
+  let totalPages = 1;
 
   while (true) {
     const url = `${API_URL}/${USERNAME}/repos?per_page=100&page=${page}`;
     const res = await fetch(url);
     if (!res.ok) throw new Error(`GitHub API error: ${res.status}`);
 
+    // Parse last page from Link header on first request
+    const link = res.headers.get("Link");
+    if (page === 1 && link) {
+      const lastMatch = link.match(/[?&]page=(\d+)>;\s*rel="last"/);
+      if (lastMatch) totalPages = parseInt(lastMatch[1]!, 10);
+    }
+
     const repos: GitHubRepo[] = await res.json();
     if (repos.length === 0) break;
 
     allRepos.push(...repos);
+    onProgress?.(page, totalPages);
 
-    const link = res.headers.get("Link");
     if (!link || !link.includes('rel="next"')) break;
     page++;
   }
@@ -468,12 +480,43 @@ function showError(message: string): void {
   }
 }
 
+// ========== Progress Bar ==========
+
+function createProgressBar(): { container: HTMLDivElement; fill: HTMLDivElement } {
+  const container = document.createElement('div');
+  container.className = 'progress-bar';
+  const fill = document.createElement('div');
+  fill.className = 'progress-bar-fill';
+  container.appendChild(fill);
+  document.body.appendChild(container);
+  return { container, fill };
+}
+
+function updateProgressBar(fill: HTMLDivElement, loaded: number, total: number): void {
+  const pct = Math.min((loaded / total) * 100, 100);
+  fill.style.width = `${pct}%`;
+}
+
+function removeProgressBar(container: HTMLDivElement, fill: HTMLDivElement): void {
+  fill.style.width = '100%';
+  // Let the fill transition finish, then fade out the bar
+  setTimeout(() => {
+    container.classList.add('fade-out');
+    container.addEventListener('transitionend', () => container.remove(), { once: true });
+  }, 350);
+}
+
 // ========== Init ==========
 
 async function init(): Promise<void> {
+  const { container, fill } = createProgressBar();
   try {
-    const repos = await fetchAllRepos();
+    const repos = await fetchAllRepos((loaded, total) => {
+      updateProgressBar(fill, loaded, total);
+    });
     const stats = computeStats(repos);
+
+    removeProgressBar(container, fill);
 
     // Render stats
     const statsContent = document.getElementById("stats-content");
@@ -497,6 +540,7 @@ async function init(): Promise<void> {
     }
   } catch (err) {
     console.error("Failed to load projects:", err);
+    removeProgressBar(container, fill);
     showError("Failed to load projects. Please try again later.");
   }
 }
